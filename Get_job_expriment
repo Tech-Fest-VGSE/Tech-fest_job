@@ -1,0 +1,2958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Future Talent Lab — 2035</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+
+    background:#070b12;
+
+    color:#ffffff;
+
+    min-height:100vh;
+
+}
+
+.container{
+
+    width:94%;
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:25px 0 60px;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+
+    text-align:center;
+
+    color:#6ee7ff;
+
+    letter-spacing:4px;
+
+    font-size:12px;
+
+    margin-bottom:30px;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    text-align:center;
+
+    padding:65px 10px;
+
+}
+
+.hero h1{
+
+    font-size:clamp(42px,9vw,82px);
+
+    line-height:.92;
+
+    margin-bottom:28px;
+
+}
+
+.hero h1 span{
+
+    color:#6ee7ff;
+
+}
+
+.hero p{
+
+    color:#aab5c6;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    margin-bottom:38px;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+button{
+
+    border:none;
+
+    padding:15px 24px;
+
+    border-radius:9px;
+
+    background:#6ee7ff;
+
+    color:#061018;
+
+    font-weight:bold;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    opacity:.85;
+
+}
+
+.secondary{
+
+    background:#182433;
+
+    color:white;
+
+    border:1px solid #34475e;
+
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card{
+
+    background:#101722;
+
+    border:1px solid #26374b;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+}
+
+.card h2{
+
+    margin-bottom:20px;
+
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+label{
+
+    display:block;
+
+    color:#aeb9c9;
+
+    font-size:14px;
+
+    margin-top:16px;
+
+}
+
+input,
+select{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:8px;
+
+    border-radius:8px;
+
+    border:1px solid #35475e;
+
+    background:#080d15;
+
+    color:white;
+
+    outline:none;
+
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress-container{
+
+    height:7px;
+
+    background:#202b3a;
+
+    border-radius:20px;
+
+    margin:15px 0 25px;
+
+    overflow:hidden;
+
+}
+
+.progress{
+
+    height:100%;
+
+    width:0%;
+
+    background:#6ee7ff;
+
+    transition:.3s;
+
+}
+
+
+/* =====================================================
+   CAMERA
+===================================================== */
+
+.camera-area{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:650px;
+
+    margin:auto;
+
+    background:#020407;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    border:1px solid #30445a;
+
+    min-height:250px;
+
+}
+
+video{
+
+    width:100%;
+
+    display:block;
+
+    transform:scaleX(-1);
+
+    background:#020407;
+
+}
+
+.camera-placeholder{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:#7f8da0;
+
+    padding:30px;
+
+    font-size:15px;
+
+}
+
+.camera-status{
+
+    position:absolute;
+
+    top:12px;
+
+    left:12px;
+
+    background:#080d15dd;
+
+    padding:8px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+}
+
+
+/* =====================================================
+   METRICS
+===================================================== */
+
+.metrics{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.metric{
+
+    background:#080e17;
+
+    border:1px solid #26364a;
+
+    padding:15px;
+
+    border-radius:10px;
+
+}
+
+.metric-name{
+
+    font-size:11px;
+
+    color:#94a2b5;
+
+}
+
+.metric-value{
+
+    font-size:23px;
+
+    margin-top:5px;
+
+    color:#6ee7ff;
+
+}
+
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+.question-number{
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    color:#6ee7ff;
+
+    margin-bottom:12px;
+
+}
+
+.question{
+
+    font-size:25px;
+
+    line-height:1.4;
+
+    margin-bottom:20px;
+
+}
+
+.option{
+
+    background:#0a111b;
+
+    border:1px solid #2d4057;
+
+    padding:17px;
+
+    border-radius:10px;
+
+    margin:10px 0;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.option:hover{
+
+    border-color:#6ee7ff;
+
+    transform:translateX(3px);
+
+}
+
+.option.selected{
+
+    background:#102d37;
+
+    border-color:#6ee7ff;
+
+}
+
+
+/* =====================================================
+   TRANSCRIPT
+===================================================== */
+
+.live-transcript{
+
+    background:#080e17;
+
+    border:1px solid #26364a;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    min-height:80px;
+
+    color:#cbd5e1;
+
+    line-height:1.5;
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+
+    padding:15px;
+
+    background:#080e17;
+
+    border:1px solid #26364a;
+
+    border-radius:10px;
+
+    margin:18px 0;
+
+    color:#aeb9c9;
+
+    line-height:1.6;
+
+}
+
+.small{
+
+    font-size:12px;
+
+    color:#8390a3;
+
+    line-height:1.5;
+
+    margin-top:12px;
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.score{
+
+    font-size:90px;
+
+    font-weight:bold;
+
+    color:#6ee7ff;
+
+    text-align:center;
+
+}
+
+.score-label{
+
+    text-align:center;
+
+    color:#9da9bb;
+
+    margin-bottom:30px;
+
+}
+
+.skill-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.skill{
+
+    background:#080e17;
+
+    border:1px solid #26364a;
+
+    border-radius:12px;
+
+    padding:18px;
+
+}
+
+.skill-name{
+
+    font-size:12px;
+
+    color:#9da9bb;
+
+}
+
+.skill-score{
+
+    font-size:28px;
+
+    margin-top:6px;
+
+    color:#6ee7ff;
+
+}
+
+.result-message{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    border:1px solid #26364a;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    line-height:1.6;
+
+    color:#cbd5e1;
+
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    background:#102d37;
+
+    color:#6ee7ff;
+
+    font-size:11px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .hero{
+
+        padding:45px 5px;
+
+    }
+
+    .metrics{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+    .skill-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .question{
+
+        font-size:21px;
+
+    }
+
+    .score{
+
+        font-size:70px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     LOGO
+===================================================== -->
+
+<div class="logo">
+
+FUTURE TALENT LAB / 2035
+
+</div>
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section id="home">
+
+<div class="hero">
+
+<div class="badge">
+
+AI-ASSISTED INTERVIEW SIMULATOR
+
+</div>
+
+<h1>
+
+WOULD YOU<br>
+
+GET <span>HIRED</span><br>
+
+IN 2035?
+
+</h1>
+
+<p>
+
+The jobs are changing.<br>
+
+Are your skills ready?
+
+</p>
+
+<button id="startButton">
+
+START ASSESSMENT →
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROFILE
+===================================================== -->
+
+<section id="profile" class="hidden">
+
+<div class="card">
+
+<h2>Candidate Profile</h2>
+
+
+<label>Your Name</label>
+
+<input
+id="candidateName"
+type="text"
+placeholder="Enter your name"
+>
+
+
+<label>Technical Skill Level</label>
+
+<select id="technicalLevel">
+
+<option value="25">
+Beginner
+</option>
+
+<option value="50">
+Intermediate
+</option>
+
+<option value="75">
+Advanced
+</option>
+
+<option value="100">
+Expert
+</option>
+
+</select>
+
+
+<label>Experience With AI Tools</label>
+
+<select id="aiLevel">
+
+<option value="25">
+Very Low
+</option>
+
+<option value="50">
+Basic
+</option>
+
+<option value="75">
+Good
+</option>
+
+<option value="100">
+Advanced
+</option>
+
+</select>
+
+
+<br><br>
+
+
+<button id="profileContinue">
+
+CONTINUE →
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PERMISSION
+===================================================== -->
+
+<section id="permission" class="hidden">
+
+<div class="card">
+
+<h2>
+
+Interview Environment
+
+</h2>
+
+
+<p style="color:#aab5c6;line-height:1.7">
+
+This project can use your camera and microphone
+to measure observable interview-presentation signals.
+
+<br><br>
+
+The system measures:
+
+<br>• Face visibility
+<br>• Head movement
+<br>• Voice activity
+<br>• Speaking time
+<br>• Interview responses
+
+<br><br>
+
+It does <b>not</b> claim to determine personality,
+honesty, emotions or confidence from someone's face.
+
+</p>
+
+
+<div
+id="permissionStatus"
+class="status-box">
+
+Camera and microphone are not connected.
+
+</div>
+
+
+<button id="enableMediaButton">
+
+ENABLE CAMERA + MICROPHONE
+
+</button>
+
+
+<p class="small">
+
+If your browser preview blocks camera/microphone,
+the system automatically switches to Demo Mode.
+
+For the real camera version, use your GitHub Pages HTTPS URL.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERVIEW
+===================================================== -->
+
+<section id="interview" class="hidden">
+
+
+<div class="progress-container">
+
+<div
+id="progress"
+class="progress">
+
+</div>
+
+</div>
+
+
+<!-- CAMERA CARD -->
+
+<div class="card">
+
+
+<div class="camera-area">
+
+
+<video
+id="video"
+autoplay
+muted
+playsinline>
+</video>
+
+
+<div
+id="cameraPlaceholder"
+class="camera-placeholder">
+
+Camera preview will appear here.
+
+</div>
+
+
+<div
+id="cameraStatus"
+class="camera-status">
+
+● WAITING
+
+</div>
+
+
+</div>
+
+
+<div class="metrics">
+
+
+<div class="metric">
+
+<div class="metric-name">
+
+FACE VISIBILITY
+
+</div>
+
+<div
+id="faceMetric"
+class="metric-value">
+
+0%
+
+</div>
+
+</div>
+
+
+<div class="metric">
+
+<div class="metric-name">
+
+HEAD STABILITY
+
+</div>
+
+<div
+id="headMetric"
+class="metric-value">
+
+0%
+
+</div>
+
+</div>
+
+
+<div class="metric">
+
+<div class="metric-name">
+
+VOICE ACTIVITY
+
+</div>
+
+<div
+id="voiceMetric"
+class="metric-value">
+
+0%
+
+</div>
+
+</div>
+
+
+<div class="metric">
+
+<div class="metric-name">
+
+SPEAKING TIME
+
+</div>
+
+<div
+id="timeMetric"
+class="metric-value">
+
+0s
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!-- QUESTION CARD -->
+
+<div class="card">
+
+
+<div
+id="questionNumber"
+class="question-number">
+
+QUESTION 1 / 5
+
+</div>
+
+
+<div
+id="question"
+class="question">
+
+Loading...
+
+</div>
+
+
+<div id="options"></div>
+
+
+<div
+id="transcript"
+class="live-transcript">
+
+Press START ANSWER and speak your answer.
+
+</div>
+
+
+<br>
+
+
+<button id="voiceButton">
+
+🎙 START ANSWER
+
+</button>
+
+
+<button
+id="stopVoiceButton"
+class="secondary"
+style="display:none;margin-left:8px">
+
+STOP ANSWER
+
+</button>
+
+
+<br><br>
+
+
+<button id="nextButton">
+
+NEXT →
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     RESULT
+===================================================== -->
+
+<section id="result" class="hidden">
+
+
+<div class="card">
+
+
+<h2 style="text-align:center">
+
+YOUR 2035 JOB READINESS
+
+</h2>
+
+
+<div
+id="candidateResult"
+style="text-align:center;color:#94a2b5;margin:10px 0 20px">
+
+</div>
+
+
+<div
+id="finalScore"
+class="score">
+
+0
+
+</div>
+
+
+<div class="score-label">
+
+READINESS SCORE / 100
+
+</div>
+
+
+<div class="skill-grid">
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+TECHNICAL READINESS
+
+</div>
+
+<div
+id="technicalScore"
+class="skill-score">
+
+0%
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+PROBLEM SOLVING
+
+</div>
+
+<div
+id="problemScore"
+class="skill-score">
+
+0%
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+COMMUNICATION
+
+</div>
+
+<div
+id="communicationScore"
+class="skill-score">
+
+0%
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+ADAPTABILITY
+
+</div>
+
+<div
+id="adaptabilityScore"
+class="skill-score">
+
+0%
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+AI READINESS
+
+</div>
+
+<div
+id="aiScore"
+class="skill-score">
+
+0%
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+INTERVIEW PRESENCE
+
+</div>
+
+<div
+id="presenceScore"
+class="skill-score">
+
+0%
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div
+id="message"
+class="result-message">
+
+</div>
+
+
+<br>
+
+
+<button
+id="restartButton"
+style="width:100%">
+
+TAKE ANOTHER INTERVIEW
+
+</button>
+
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   GLOBAL VARIABLES
+===================================================== */
+
+let mediaStream = null;
+
+let audioContext = null;
+
+let analyser = null;
+
+let recognition = null;
+
+let currentQuestion = 0;
+
+let selectedAnswer = null;
+
+let answers = [];
+
+let interviewStartTime = 0;
+
+let faceSamples = 0;
+
+let faceDetectedSamples = 0;
+
+let movementTotal = 0;
+
+let lastFaceX = null;
+
+let lastFaceY = null;
+
+let audioSamples = 0;
+
+let voiceSamples = 0;
+
+let demoMode = false;
+
+let speechSupported = false;
+
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+
+question:
+"An AI can complete a programming task faster than you. Why should a company still hire you?",
+
+category:"adaptability",
+
+options:[
+
+"I can learn, understand requirements and make decisions.",
+
+"AI cannot replace humans completely.",
+
+"I would just use AI for everything.",
+
+"I don't know."
+
+]
+
+},
+
+{
+
+question:
+"Your production application suddenly stops working. What do you do first?",
+
+category:"problem",
+
+options:[
+
+"Understand the error, check logs and identify the root cause.",
+
+"Restart everything immediately.",
+
+"Ask someone else to fix it.",
+
+"Wait and see if it fixes itself."
+
+]
+
+},
+
+{
+
+question:
+"You have to learn a completely new technology in 48 hours. What is your approach?",
+
+category:"adaptability",
+
+options:[
+
+"Understand the fundamentals, build something small and practice.",
+
+"Watch tutorials for two days.",
+
+"Memorize the syntax.",
+
+"Avoid it if possible."
+
+]
+
+},
+
+{
+
+question:
+"A teammate strongly disagrees with your technical solution. What do you do?",
+
+category:"communication",
+
+options:[
+
+"Discuss both approaches and compare them using evidence.",
+
+"Explain why my solution is better.",
+
+"Let the manager decide.",
+
+"Ignore the disagreement."
+
+]
+
+},
+
+{
+
+question:
+"Your company gives you an AI tool you have never used before. What would you do?",
+
+category:"ai",
+
+options:[
+
+"Experiment with it, understand its limitations and find useful applications.",
+
+"Learn it only when necessary.",
+
+"Use it without checking its output.",
+
+"Avoid using it."
+
+]
+
+}
+
+];
+
+
+/* =====================================================
+   ANSWER SCORES
+===================================================== */
+
+const answerScores = [
+
+[10,6,2,1],
+
+[10,5,3,1],
+
+[10,6,4,1],
+
+[10,6,4,1],
+
+[10,6,3,1]
+
+];
+
+
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
+
+function hideAll(){
+
+    document
+    .querySelectorAll("section")
+    .forEach(function(section){
+
+        section.classList.add("hidden");
+
+    });
+
+}
+
+
+function showSection(id){
+
+    hideAll();
+
+    document
+    .getElementById(id)
+    .classList.remove("hidden");
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+document
+.getElementById("startButton")
+.addEventListener(
+"click",
+function(){
+
+    showSection("profile");
+
+});
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+document
+.getElementById("profileContinue")
+.addEventListener(
+"click",
+function(){
+
+    const name =
+    document
+    .getElementById("candidateName")
+    .value
+    .trim();
+
+
+    if(!name){
+
+        alert(
+        "Please enter your name."
+        );
+
+        return;
+
+    }
+
+
+    showSection("permission");
+
+});
+
+
+/* =====================================================
+   CAMERA + MICROPHONE
+===================================================== */
+
+document
+.getElementById("enableMediaButton")
+.addEventListener(
+"click",
+enableMedia
+);
+
+
+async function enableMedia(){
+
+    const status =
+    document
+    .getElementById(
+        "permissionStatus"
+    );
+
+
+    status.innerText =
+    "Requesting camera and microphone permission...";
+
+
+    try{
+
+
+        /*
+        CHECK CAMERA SUPPORT
+        */
+
+        if(
+        !navigator.mediaDevices ||
+        !navigator.mediaDevices.getUserMedia
+        ){
+
+            throw new Error(
+            "Camera API unavailable."
+            );
+
+        }
+
+
+        /*
+        REQUEST MEDIA
+        */
+
+        mediaStream =
+        await navigator
+        .mediaDevices
+        .getUserMedia({
+
+            video:{
+                facingMode:"user",
+                width:{ideal:640},
+                height:{ideal:480}
+            },
+
+            audio:true
+
+        });
+
+
+        /*
+        CAMERA
+        */
+
+        const video =
+        document
+        .getElementById(
+            "video"
+        );
+
+
+        video.srcObject =
+        mediaStream;
+
+
+        document
+        .getElementById(
+            "cameraPlaceholder"
+        )
+        .style.display =
+        "none";
+
+
+        /*
+        AUDIO
+        */
+
+        setupAudio();
+
+
+        status.innerText =
+        "✓ Camera and microphone connected.";
+
+
+        demoMode = false;
+
+
+        startInterviewSession();
+
+
+    }
+
+    catch(error){
+
+        console.warn(
+        "Camera/microphone error:",
+        error
+        );
+
+
+        /*
+        IMPORTANT:
+        DON'T BREAK THE WEBSITE.
+
+        SWITCH TO DEMO MODE.
+        */
+
+        demoMode = true;
+
+
+        status.innerHTML =
+
+        "<b>DEMO MODE</b><br><br>" +
+
+        "Camera or microphone cannot be accessed " +
+
+        "in this preview environment.<br><br>" +
+
+        "The interview will continue normally.";
+
+
+        setTimeout(
+        function(){
+
+            startInterviewSession();
+
+        },
+        700
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   START INTERVIEW
+===================================================== */
+
+function startInterviewSession(){
+
+    showSection("interview");
+
+
+    currentQuestion = 0;
+
+    selectedAnswer = null;
+
+    answers = [];
+
+
+    interviewStartTime =
+    Date.now();
+
+
+    showQuestion();
+
+
+    if(mediaStream){
+
+        startAudioAnalysis();
+
+    }
+
+
+    /*
+    FACE ANALYSIS
+    Only starts if browser supports
+    FaceDetector.
+
+    If not available,
+    the website continues normally.
+    */
+
+    startFaceDetection();
+
+}
+
+
+/* =====================================================
+   AUDIO SETUP
+===================================================== */
+
+function setupAudio(){
+
+    try{
+
+        const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+
+        if(!AudioContext){
+
+            return;
+
+        }
+
+
+        audioContext =
+        new AudioContext();
+
+
+        const source =
+        audioContext
+        .createMediaStreamSource(
+            mediaStream
+        );
+
+
+        analyser =
+        audioContext
+        .createAnalyser();
+
+
+        analyser.fftSize =
+        512;
+
+
+        source.connect(
+            analyser
+        );
+
+    }
+
+    catch(error){
+
+        console.warn(
+        "Audio setup failed:",
+        error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   AUDIO ANALYSIS
+===================================================== */
+
+function startAudioAnalysis(){
+
+    if(!analyser){
+
+        return;
+
+    }
+
+
+    const data =
+    new Uint8Array(
+        analyser.fftSize
+    );
+
+
+    function analyze(){
+
+        analyser
+        .getByteTimeDomainData(
+            data
+        );
+
+
+        let sum = 0;
+
+
+        for(
+        let i=0;
+        i<data.length;
+        i++
+        ){
+
+            const value =
+            (data[i]-128)/128;
+
+
+            sum +=
+            value*value;
+
+        }
+
+
+        const rms =
+        Math.sqrt(
+            sum/data.length
+        );
+
+
+        audioSamples++;
+
+
+        if(
+        rms > 0.035
+        ){
+
+            voiceSamples++;
+
+        }
+
+
+        const activity =
+        audioSamples>0
+        ?
+        (
+            voiceSamples/
+            audioSamples
+        )*100
+        :
+        0;
+
+
+        document
+        .getElementById(
+            "voiceMetric"
+        )
+        .innerText =
+        Math.round(
+            activity
+        )+"%";
+
+
+        const seconds =
+        Math.floor(
+        (
+            Date.now() -
+            interviewStartTime
+        )/1000
+        );
+
+
+        document
+        .getElementById(
+            "timeMetric"
+        )
+        .innerText =
+        seconds+"s";
+
+
+        requestAnimationFrame(
+            analyze
+        );
+
+    }
+
+
+    analyze();
+
+}
+
+
+/* =====================================================
+   FACE DETECTION
+===================================================== */
+
+function startFaceDetection(){
+
+    /*
+    Browser FaceDetector API is not
+    available everywhere.
+
+    If unavailable, the project still works.
+    */
+
+    if(
+    "FaceDetector" in window
+    ){
+
+        try{
+
+            const detector =
+            new FaceDetector({
+                fastMode:true,
+                maxDetectedFaces:1
+            });
+
+
+            const video =
+            document
+            .getElementById(
+                "video"
+            );
+
+
+            async function detect(){
+
+                if(
+                !demoMode &&
+                video.readyState>=2
+                ){
+
+                    try{
+
+                        const faces =
+                        await detector.detect(
+                            video
+                        );
+
+
+                        faceSamples++;
+
+
+                        if(
+                        faces.length>0
+                        ){
+
+                            faceDetectedSamples++;
+
+
+                            /*
+                            Approximate face
+                            center movement
+                            */
+
+                            const box =
+                            faces[0].boundingBox;
+
+
+                            const x =
+                            box.x+
+                            box.width/2;
+
+
+                            const y =
+                            box.y+
+                            box.height/2;
+
+
+                            if(
+                            lastFaceX!==null
+                            ){
+
+                                movementTotal +=
+
+                                Math.abs(
+                                x-lastFaceX
+                                )+
+
+                                Math.abs(
+                                y-lastFaceY
+                                );
+
+                            }
+
+
+                            lastFaceX=x;
+
+                            lastFaceY=y;
+
+                        }
+
+
+                        updateFaceScore();
+
+                    }
+
+                    catch(error){
+
+                        console.warn(
+                        "Face detection error",
+                        error
+                        );
+
+                    }
+
+                }
+
+
+                requestAnimationFrame(
+                    detect
+                );
+
+            }
+
+
+            detect();
+
+        }
+
+        catch(error){
+
+            console.warn(
+            "FaceDetector unavailable",
+            error
+            );
+
+            demoFaceMetrics();
+
+        }
+
+    }
+
+    else{
+
+        /*
+        Most Android browsers may not
+        provide FaceDetector.
+
+        Use neutral demo values rather
+        than pretending the browser
+        detected a face.
+        */
+
+        demoFaceMetrics();
+
+    }
+
+}
+
+
+/* =====================================================
+   FACE SCORE
+===================================================== */
+
+function updateFaceScore(){
+
+    const visibility =
+    faceSamples>0
+    ?
+    (
+        faceDetectedSamples/
+        faceSamples
+    )*100
+    :
+    0;
+
+
+    const movement =
+    movementTotal/
+    Math.max(
+        faceSamples,
+        1
+    );
+
+
+    const stability =
+    Math.max(
+        0,
+        Math.min(
+            100,
+            100-(movement/3)
+        )
+    );
+
+
+    document
+    .getElementById(
+        "faceMetric"
+    )
+    .innerText =
+    Math.round(
+        visibility
+    )+"%";
+
+
+    document
+    .getElementById(
+        "headMetric"
+    )
+    .innerText =
+    Math.round(
+        stability
+    )+"%";
+
+
+    if(
+    faceDetectedSamples>0
+    ){
+
+        document
+        .getElementById(
+            "cameraStatus"
+        )
+        .innerText =
+        "● FACE DETECTED";
+
+    }
+
+}
+
+
+/* =====================================================
+   DEMO FACE METRICS
+===================================================== */
+
+function demoFaceMetrics(){
+
+    document
+    .getElementById(
+        "faceMetric"
+    )
+    .innerText =
+    "N/A";
+
+
+    document
+    .getElementById(
+        "headMetric"
+    )
+    .innerText =
+    "N/A";
+
+
+    document
+    .getElementById(
+        "cameraStatus"
+    )
+    .innerText =
+    "● DEMO MODE";
+
+}
+
+
+/* =====================================================
+   SHOW QUESTION
+===================================================== */
+
+function showQuestion(){
+
+    const q =
+    questions[
+        currentQuestion
+    ];
+
+
+    selectedAnswer = null;
+
+
+    document
+    .getElementById(
+        "questionNumber"
+    )
+    .innerText =
+
+    "QUESTION " +
+
+    (currentQuestion+1) +
+
+    " / " +
+
+    questions.length;
+
+
+    document
+    .getElementById(
+        "question"
+    )
+    .innerText =
+    q.question;
+
+
+    let html="";
+
+
+    q.options.forEach(
+    function(option,index){
+
+        html +=
+
+        '<div class="option" ' +
+
+        'data-index="'+
+        index+
+        '">' +
+
+        option +
+
+        '</div>';
+
+    });
+
+
+    document
+    .getElementById(
+        "options"
+    )
+    .innerHTML =
+    html;
+
+
+    document
+    .querySelectorAll(
+        ".option"
+    )
+    .forEach(
+    function(option){
+
+        option.addEventListener(
+        "click",
+        function(){
+
+            selectAnswer(
+                parseInt(
+                    option.dataset.index
+                )
+            );
+
+        });
+
+    });
+
+
+    document
+    .getElementById(
+        "progress"
+    )
+    .style.width =
+
+    (
+        currentQuestion/
+        questions.length*
+        100
+    )+"%";
+
+
+    document
+    .getElementById(
+        "transcript"
+    )
+    .innerText =
+
+    "Press START ANSWER and speak your answer.";
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    selectedAnswer =
+    index;
+
+
+    document
+    .querySelectorAll(
+        ".option"
+    )
+    .forEach(
+    function(option){
+
+        option.classList.remove(
+            "selected"
+        );
+
+    });
+
+
+    const selected =
+    document
+    .querySelector(
+        '[data-index="'+
+        index+
+        '"]'
+    );
+
+
+    if(selected){
+
+        selected.classList.add(
+            "selected"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SPEECH
+===================================================== */
+
+document
+.getElementById(
+    "voiceButton"
+)
+.addEventListener(
+    "click",
+    startVoice
+);
+
+
+document
+.getElementById(
+    "stopVoiceButton"
+)
+.addEventListener(
+    "click",
+    stopVoice
+);
+
+
+function startVoice(){
+
+    const SpeechRecognition =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
+
+
+    if(!SpeechRecognition){
+
+        alert(
+
+        "Speech recognition is not supported " +
+
+        "by this browser. You can still select " +
+
+        "your answer and continue."
+
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        recognition =
+        new SpeechRecognition();
+
+
+        recognition.continuous =
+        true;
+
+
+        recognition.interimResults =
+        true;
+
+
+        recognition.lang =
+        "en-IN";
+
+
+        recognition.onresult =
+        function(event){
+
+            let text="";
+
+
+            for(
+            let i=event.resultIndex;
+            i<event.results.length;
+            i++
+            ){
+
+                text +=
+
+                event.results[i][0]
+                .transcript;
+
+            }
+
+
+            document
+            .getElementById(
+                "transcript"
+            )
+            .innerText =
+            text;
+
+        };
+
+
+        recognition.onerror =
+        function(event){
+
+            console.warn(
+            "Speech error:",
+            event.error
+            );
+
+        };
+
+
+        recognition.start();
+
+
+        document
+        .getElementById(
+            "voiceButton"
+        )
+        .style.display =
+        "none";
+
+
+        document
+        .getElementById(
+            "stopVoiceButton"
+        )
+        .style.display =
+        "inline-block";
+
+    }
+
+    catch(error){
+
+        console.warn(
+        error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   STOP VOICE
+===================================================== */
+
+function stopVoice(){
+
+    if(recognition){
+
+        try{
+
+            recognition.stop();
+
+        }
+
+        catch(error){
+
+            console.log(error);
+
+        }
+
+    }
+
+
+    document
+    .getElementById(
+        "voiceButton"
+    )
+    .style.display =
+    "inline-block";
+
+
+    document
+    .getElementById(
+        "stopVoiceButton"
+    )
+    .style.display =
+    "none";
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+document
+.getElementById(
+    "nextButton"
+)
+.addEventListener(
+    "click",
+    nextQuestion
+);
+
+
+function nextQuestion(){
+
+    if(
+    selectedAnswer===null
+    ){
+
+        alert(
+        "Please select an answer."
+        );
+
+        return;
+
+    }
+
+
+    stopVoice();
+
+
+    answers[
+        currentQuestion
+    ] =
+    selectedAnswer;
+
+
+    if(
+    currentQuestion <
+    questions.length-1
+    ){
+
+        currentQuestion++;
+
+
+        showQuestion();
+
+    }
+
+    else{
+
+        finishInterview();
+
+    }
+
+}
+
+
+/* =====================================================
+   FINISH
+===================================================== */
+
+function finishInterview(){
+
+    stopVoice();
+
+
+    const technical =
+    parseInt(
+        document
+        .getElementById(
+            "technicalLevel"
+        )
+        .value
+    );
+
+
+    const ai =
+    parseInt(
+        document
+        .getElementById(
+            "aiLevel"
+        )
+        .value
+    );
+
+
+    let problem=0;
+
+    let communication=0;
+
+    let adaptability=0;
+
+    let aiQuestion=0;
+
+
+    let problemCount=0;
+
+    let communicationCount=0;
+
+    let adaptabilityCount=0;
+
+    let aiCount=0;
+
+
+    questions.forEach(
+    function(q,index){
+
+        const answer =
+        answers[index];
+
+
+        const score =
+        answerScores[index][answer]
+        *10;
+
+
+        if(
+        q.category==="problem"
+        ){
+
+            problem+=score;
+
+            problemCount++;
+
+        }
+
+
+        if(
+        q.category==="communication"
+        ){
+
+            communication+=score;
+
+            communicationCount++;
+
+        }
+
+
+        if(
+        q.category==="adaptability"
+        ){
+
+            adaptability+=score;
+
+            adaptabilityCount++;
+
+        }
+
+
+        if(
+        q.category==="ai"
+        ){
+
+            aiQuestion+=score;
+
+            aiCount++;
+
+        }
+
+    });
+
+
+    problem =
+    problemCount
+    ?
+    problem/problemCount
+    :
+    50;
+
+
+    communication =
+    communicationCount
+    ?
+    communication/
+    communicationCount
+    :
+    50;
+
+
+    adaptability =
+    adaptabilityCount
+    ?
+    adaptability/
+    adaptabilityCount
+    :
+    50;
+
+
+    /*
+    PRESENCE
+    */
+
+    let presence;
+
+
+    if(
+    demoMode ||
+    faceSamples===0
+    ){
+
+        /*
+        We don't pretend camera
+        analysis happened.
+        */
+
+        presence = 50;
+
+    }
+
+    else{
+
+        const face =
+        (
+            faceDetectedSamples/
+            faceSamples
+        )*100;
+
+
+        const movement =
+        movementTotal/
+        Math.max(
+            faceSamples,
+            1
+        );
+
+
+        const stability =
+        Math.max(
+            0,
+            Math.min(
+                100,
+                100-(movement/3)
+            )
+        );
+
+
+        const voice =
+        audioSamples>0
+        ?
+        (
+            voiceSamples/
+            audioSamples
+        )*100
+        :
+        50;
+
+
+        presence =
+        Math.round(
+
+            face*.35+
+
+            stability*.25+
+
+            voice*.40
+
+        );
+
+    }
+
+
+    /*
+    FINAL SCORE
+    */
+
+    const finalScore =
+    Math.round(
+
+        technical*.20+
+
+        problem*.20+
+
+        communication*.15+
+
+        adaptability*.15+
+
+        ai*.10+
+
+        presence*.20
+
+    );
+
+
+    /*
+    SHOW RESULT
+    */
+
+    document
+    .getElementById(
+        "candidateResult"
+    )
+    .innerText =
+
+    "Candidate: " +
+
+    document
+    .getElementById(
+        "candidateName"
+    )
+    .value;
+
+
+    document
+    .getElementById(
+        "finalScore"
+    )
+    .innerText =
+    finalScore;
+
+
+    document
+    .getElementById(
+        "technicalScore"
+    )
+    .innerText =
+    technical+"%";
+
+
+    document
+    .getElementById(
+        "problemScore"
+    )
+    .innerText =
+    Math.round(
+        problem
+    )+"%";
+
+
+    document
+    .getElementById(
+        "communicationScore"
+    )
+    .innerText =
+    Math.round(
+        communication
+    )+"%";
+
+
+    document
+    .getElementById(
+        "adaptabilityScore"
+    )
+    .innerText =
+    Math.round(
+        adaptability
+    )+"%";
+
+
+    document
+    .getElementById(
+        "aiScore"
+    )
+    .innerText =
+
+    Math.round(
+
+        (
+            ai+
+            aiQuestion
+        )/2
+
+    )+"%";
+
+
+    document
+    .getElementById(
+        "presenceScore"
+    )
+    .innerText =
+    presence+"%";
+
+
+    /*
+    MESSAGE
+    */
+
+    let message;
+
+
+    if(
+    finalScore>=85
+    ){
+
+        message =
+        "EXCELLENT — Your profile shows strong readiness for an AI-driven workplace.";
+
+    }
+
+    else if(
+    finalScore>=70
+    ){
+
+        message =
+        "STRONG POTENTIAL — You are on the right track. Strengthen your weaker areas.";
+
+    }
+
+    else if(
+    finalScore>=50
+    ){
+
+        message =
+        "DEVELOPING — You have a foundation. Focus on communication, problem solving and adaptability.";
+
+    }
+
+    else{
+
+        message =
+        "EARLY STAGE — Identify your weakest skills and build them through projects and practice.";
+
+    }
+
+
+    if(demoMode){
+
+        message +=
+
+        " Camera analysis was unavailable in this session, so Interview Presence was not claimed as a real camera measurement.";
+
+    }
+
+
+    document
+    .getElementById(
+        "message"
+    )
+    .innerText =
+    message;
+
+
+    showSection("result");
+
+
+    /*
+    STOP CAMERA
+    */
+
+    if(mediaStream){
+
+        mediaStream
+        .getTracks()
+        .forEach(
+        function(track){
+
+            track.stop();
+
+        });
+
+    }
+
+
+    if(audioContext){
+
+        try{
+
+            audioContext.close();
+
+        }
+
+        catch(error){}
+
+    }
+
+}
+
+
+/* =====================================================
+   RESTART
+===================================================== */
+
+document
+.getElementById(
+    "restartButton"
+)
+.addEventListener(
+    "click",
+    function(){
+
+        location.reload();
+
+    });
+
+
+</script>
+
+</body>
+
+</html>
